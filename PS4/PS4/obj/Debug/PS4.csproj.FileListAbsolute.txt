@@ -1,0 +1,5 @@
+C:\Users\kacpe\OneDrive - Politechnika Białostocka\POLITECHNIKA\VI semestr\BSK\PS\4\BSK-PS4-WPF\PS4\PS4\obj\Debug\PS4.csproj.AssemblyReference.cache
+C:\Users\kacpe\OneDrive - Politechnika Białostocka\POLITECHNIKA\VI semestr\BSK\PS\4\BSK-PS4-WPF\PS4\PS4\obj\Debug\MainWindow.g.cs
+C:\Users\kacpe\OneDrive - Politechnika Białostocka\POLITECHNIKA\VI semestr\BSK\PS\4\BSK-PS4-WPF\PS4\PS4\obj\Debug\App.g.cs
+C:\Users\kacpe\OneDrive - Politechnika Białostocka\POLITECHNIKA\VI semestr\BSK\PS\4\BSK-PS4-WPF\PS4\PS4\obj\Debug\PS4_MarkupCompile.cache
+C:\Users\kacpe\OneDrive - Politechnika Białostocka\POLITECHNIKA\VI semestr\BSK\PS\4\BSK-PS4-WPF\PS4\PS4\obj\Debug\PS4_MarkupCompile.lref

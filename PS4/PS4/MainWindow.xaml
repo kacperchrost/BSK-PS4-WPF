@@ -1,0 +1,57 @@
+﻿<Window x:Class="PS4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PS4"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <Grid>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.Row="0" Header="Generator liczb pseudolosowych bazujący na metodzie LFSR" Margin="5" Padding="5">
+            <StackPanel>
+                <DockPanel LastChildFill="True">
+                    <Label Content="Seed " Margin="5" Padding="5"/>
+                    <TextBox MinWidth="150px"  Margin="5" Padding="5" Name="seedLFSR" Text="..."/>
+                </DockPanel>
+                <DockPanel LastChildFill="True">
+                    <Label Content="Taps " Margin="5, 5, 7, 5" Padding="5"/>
+                    <TextBox MinWidth="150.5px"  Margin="5" Padding="5" Name="tapsLFSR" Text="..."/>
+                </DockPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Generuj" HorizontalAlignment="Right" Padding="5" Margin="5" Name="generate" Click="Generate_Click"/>
+                </StackPanel>
+                <DockPanel LastChildFill="True">
+                    <Label Content="Wygenerowana liczba" Margin="5, 5, 7, 5" Padding="5"/>
+                    <TextBox MinWidth="150.5px"  Margin="5" Padding="5" IsEnabled="False" Name="generated" Text="Wynik"/>
+                </DockPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Header="Szyfr strumieniowy" Margin="5" Padding="5">
+            <StackPanel>
+                <DockPanel LastChildFill="True">
+                    <Label Content="Ciąg bitów" Margin="5" Padding="5"/>
+                    <TextBox MinWidth="150px"  Margin="5" Padding="5" Name="bitString" Text="..."/>
+                </DockPanel>
+                <DockPanel LastChildFill="True">
+                    <Label Content="Generator (Seed/Taps)" Margin="5" Padding="5"/>
+                    <TextBox MinWidth="100px"  Margin="5" Padding="5" ToolTip="Seed" Name="streamSeed" Text="..."/>
+                    <TextBox MinWidth="100px"  Margin="5" Padding="5" ToolTip="Taps" Name="streamTaps" Text="..."/>
+                </DockPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Zakoduj" HorizontalAlignment="Right" Padding="5" Margin="5" Name="encrypt" Click="Encrypt_Click"/>
+                    <Button Content="Dekoduj" HorizontalAlignment="Right" Padding="5" Margin="5" Name="decrypt" Click="Decrypt_Click"/>
+                </StackPanel>
+                <DockPanel LastChildFill="True">
+                    <Label Content="Szyfr strumieniowy" Margin="5" Padding="5"/>
+                    <TextBox MinWidth="150px"  Margin="5" Padding="5" IsEnabled="false" Name="streamResult" Text="Wynik"/>
+                </DockPanel>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
