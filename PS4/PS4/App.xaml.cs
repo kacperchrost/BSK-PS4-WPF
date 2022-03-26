@@ -9,7 +9,7 @@ using System.Windows;
 namespace PS4
 {
     /// <summary>
-    /// Logika interakcji dla klasy App.xaml
+    /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {

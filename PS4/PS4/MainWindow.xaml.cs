@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace PS4
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -25,23 +25,22 @@ namespace PS4
         {
             InitializeComponent();
         }
-
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
-            /*LSFR lFSR = new(seedLFSR.Text, tapsLFSR.Text);
-            generated.Text = lFSR.GenerateOne(generated.Text);*/
+            LFSR lFSR = new(seedLFSR.Text, tapsLFSR.Text);
+            generated.Text = lFSR.GenerateOne(generated.Text);
         }
 
         private void Encrypt_Click(object sender, RoutedEventArgs e)
         {
-            /*Cipher cipher = new(bitString.Text, streamSeed.Text, streamTaps.Text);
-            cipherResult.Text = cipher.Encrypt();*/
+            Cipher cipher = new(bitString.Text, streamSeed.Text, streamTaps.Text);
+            cipherResult.Text = cipher.Encrypt();
         }
 
         private void Decrypt_Click(object sender, RoutedEventArgs e)
         {
-            /*Cipher cipher = new(bitString.Text, streamSeed.Text, streamTaps.Text);
-            cipherResult.Text = cipher.Encrypt();*/
+            Cipher cipher = new(bitString.Text, streamSeed.Text, streamTaps.Text);
+            cipherResult.Text = cipher.Encrypt();
         }
     }
 }
