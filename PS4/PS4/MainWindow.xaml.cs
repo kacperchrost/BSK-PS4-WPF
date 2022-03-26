@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PS4.Ex;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,24 @@ namespace PS4
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Generate_Click(object sender, RoutedEventArgs e)
+        {
+            /*LSFR lFSR = new(seedLFSR.Text, tapsLFSR.Text);
+            generated.Text = lFSR.GenerateOne(generated.Text);*/
+        }
+
+        private void Encrypt_Click(object sender, RoutedEventArgs e)
+        {
+            /*Cipher cipher = new(bitString.Text, streamSeed.Text, streamTaps.Text);
+            cipherResult.Text = cipher.Encrypt();*/
+        }
+
+        private void Decrypt_Click(object sender, RoutedEventArgs e)
+        {
+            /*Cipher cipher = new(bitString.Text, streamSeed.Text, streamTaps.Text);
+            cipherResult.Text = cipher.Encrypt();*/
         }
     }
 }
