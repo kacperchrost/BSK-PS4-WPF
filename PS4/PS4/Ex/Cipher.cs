@@ -24,9 +24,9 @@ namespace PS4.Ex
             LFSR LFSR = new(temp, Taps);
             //string temp = LFSR.GenerateWordLength(BitString.Length);
             //wywołanie generowania klucza
-            string key = LFSR.Generate();
+            List<int> key = LFSR.Generate();
 
-            int[] lfsrInts = LFSR.ToArray(key);
+            //int[] lfsrInts = LFSR.ToArray(key);
             //int[] lfsrInts = LFSR.ToArray(temp);
             //stworzenie tabeli z kluczem
             int[] bitStringsInts = LFSR.ToArray(BitString);
@@ -34,7 +34,7 @@ namespace PS4.Ex
 
             for (int i = 0; i < BitString.Length; i++)
             {
-                int xor = lfsrInts[i] ^ bitStringsInts[i];
+                int xor = key[i] ^ bitStringsInts[i];
                 resultInts[i] = xor;
             }
 

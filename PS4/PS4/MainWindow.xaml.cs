@@ -28,7 +28,13 @@ namespace PS4
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
             LFSR lfsr = new(seedLFSR.Text, tapsLFSR.Text);
-            generated.Text = lfsr.Generate();
+            List<int> temp = lfsr.Generate();
+            string text = "";
+            foreach(int i in temp)
+            {
+                text = text + i.ToString();
+            }
+            generated.Text = text;
         }
 
         private void Encrypt_Click(object sender, RoutedEventArgs e)
