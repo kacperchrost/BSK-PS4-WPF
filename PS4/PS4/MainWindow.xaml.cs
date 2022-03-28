@@ -1,4 +1,4 @@
-﻿using PS4.Ex;
+using PS4.Ex;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,10 +43,5 @@ namespace PS4
             cipherResult.Text = cipher.Encrypt();
         }
 
-        private void Decrypt_Click(object sender, RoutedEventArgs e)
-        {
-            Cipher cipher = new(bitString.Text, streamTaps.Text);
-            cipherResult.Text = cipher.Encrypt();
-        }
     }
 }
