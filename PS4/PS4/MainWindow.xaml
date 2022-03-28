@@ -39,8 +39,8 @@
                     <TextBox MinWidth="150px"  Margin="5" Padding="5" Name="bitString" Text="..."/>
                 </DockPanel>
                 <DockPanel LastChildFill="True">
-                    <Label Content="Powtórzenia/Wielomian" Margin="5" Padding="5"/>
-                    <TextBox MinWidth="100px"  Margin="5" Padding="5" ToolTip="Seed" Name="streamSeed" Text="..."/>
+                    <Label Content="Seed/Wielomian" Margin="5" Padding="5"/>
+                    <TextBox MinWidth="100px"  Margin="5" Padding="5" IsEnabled="false" ToolTip="Seed" Name="streamSeed" Text="seed"/>
                     <TextBox MinWidth="100px"  Margin="5" Padding="5" ToolTip="Taps" Name="streamTaps" Text="..."/>
                 </DockPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
