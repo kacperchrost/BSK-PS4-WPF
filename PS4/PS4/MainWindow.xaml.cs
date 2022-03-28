@@ -29,18 +29,26 @@ namespace PS4
         {
             LFSR lfsr = new(seedLFSR.Text, tapsLFSR.Text);
             List<int> temp = lfsr.Generate();
-            string text = "";
+            string temptext = "";
             foreach(int i in temp)
             {
-                text = text + i.ToString();
+                temptext = temptext + i.ToString();
             }
-            generated.Text = text;
+            generated.Text = temptext;
         }
 
         private void Encrypt_Click(object sender, RoutedEventArgs e)
         {
+
             Cipher cipher = new(bitString.Text, streamTaps.Text);
             cipherResult.Text = cipher.EnDecrypt();
+            string temptext = "";
+            foreach (int i in cipher.seed)
+            {
+                temptext = temptext + i.ToString();
+            }
+            streamSeed.Text = temptext;
+            
         }
 
         private void Decrypt_Click(object sender, RoutedEventArgs e)
