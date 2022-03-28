@@ -8,21 +8,29 @@ namespace PS4.Ex
 {
     class Cipher
     {
-        private readonly string BitString;
-        private readonly string Taps;
-        private readonly string Seed;
-        public Cipher(string bitString, string seed, string taps)
+        private string BitString;
+        private string Taps;
+        private string Repeat;
+        public Cipher(string BitString, string Taps)
         {
-            BitString = bitString;
-            Taps = taps;
-            Seed = seed;
+            this.BitString = BitString;
+            this.Taps = Taps;
+            Repeat = BitString;
+            
         }
-        public string Encrypt()
+        public string EnDecrypt()
         {
-            LFSR lFSR = new(Seed, Taps);
-            string temp = lFSR.GenerateWordLength(BitString.Length);
+            string temp = Repeat.ToString();
+            LFSR LFSR = new(temp, Taps);
+            //string temp = LFSR.GenerateWordLength(BitString.Length);
+            //wywołanie generowania klucza
+            string key = LFSR.Generate();
 
-            int[] lfsrInts = LFSR.ToArray(temp), bitStringsInts = LFSR.ToArray(BitString), resultInts = new int[BitString.Length];
+            int[] lfsrInts = LFSR.ToArray(key);
+            //int[] lfsrInts = LFSR.ToArray(temp);
+            //stworzenie tabeli z kluczem
+            int[] bitStringsInts = LFSR.ToArray(BitString);
+            int[] resultInts = new int[BitString.Length];
 
             for (int i = 0; i < BitString.Length; i++)
             {

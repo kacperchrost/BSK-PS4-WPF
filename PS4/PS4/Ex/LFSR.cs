@@ -6,42 +6,64 @@ using System.Threading.Tasks;
 
 namespace PS4.Ex
 {
+    class LFSR_Line
+    {
+
+        public List<int> Line; //pojedyncza linia
+        public int xor { get; set; } //wynik xor
+
+        public LFSR_Line()
+        {
+            Line = new List<int>();
+            xor = -1;
+        }
+
+        public int XOR_Method(int x, int y)
+        {
+            if (x == 0 && y == 0)
+            {
+                return 0;
+            }
+
+            if (x == 1 && y == 0)
+            {
+                return 1;
+            }
+
+            if (x == 0 && y == 1)
+            {
+                return 1;
+            }
+
+            if (x == 1 && y == 1)
+            {
+                return 0;
+            }
+
+            return -1;
+        }
+    }
     class LFSR
     {
-        private string Seed;
+        private int Repeat;
         private string Taps;
-        public LFSR(string seed, string taps)
+
+        public LFSR(string Repeat, string Taps)
         {
-            Seed = seed;
-            Taps = taps;
+            this.Repeat = int.Parse(Repeat);
+            this.Taps = Taps;
         }
         public static int[] ToArray(string s)
         {
             int[] ints = s.ToCharArray().Where(x => int.TryParse(x.ToString(), out int myInt)).Select(selector: x => int.Parse(x.ToString())).ToArray();
             return ints;
         }
-        public string GenerateWordLength(int size)
+        public string Generate()
         {
-            string oneLFSR = Step(Seed), result = "";
+            string result = "";
 
-            for (int i = 0; i < size; i++)
-            {
-                if (i != 0)
-                {
-                    oneLFSR = Step(oneLFSR);
-                }
-                result += oneLFSR[0];
-            }
             return result;
         }
-        public string GenerateOne(string result)
-        {
-            return result == "Wynik" ? Step(Seed) : Step(result);
-        }
-        public string Step(string s)
-        {
-            //TODO to tutaj trzeba zrobić te pojedyncze przejście LFSRa  i chyba jeszcze trzeba jakas pomocnicza funkcje
-            return "xd";
-        }
     }
+    
 }

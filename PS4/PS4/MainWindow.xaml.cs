@@ -27,20 +27,20 @@ namespace PS4
         }
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
-            LFSR lFSR = new(seedLFSR.Text, tapsLFSR.Text);
-            generated.Text = lFSR.GenerateOne(generated.Text);
+            LFSR lfsr = new(seedLFSR.Text, tapsLFSR.Text);
+            generated.Text = lfsr.Generate();
         }
 
         private void Encrypt_Click(object sender, RoutedEventArgs e)
         {
-            Cipher cipher = new(bitString.Text, streamSeed.Text, streamTaps.Text);
-            cipherResult.Text = cipher.Encrypt();
+            Cipher cipher = new(bitString.Text, streamTaps.Text);
+            cipherResult.Text = cipher.EnDecrypt();
         }
 
         private void Decrypt_Click(object sender, RoutedEventArgs e)
         {
-            Cipher cipher = new(bitString.Text, streamSeed.Text, streamTaps.Text);
-            cipherResult.Text = cipher.Encrypt();
+            Cipher cipher = new(bitString.Text, streamTaps.Text);
+            cipherResult.Text = cipher.EnDecrypt();
         }
     }
 }
