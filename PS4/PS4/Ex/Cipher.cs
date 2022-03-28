@@ -11,9 +11,6 @@ namespace PS4.Ex
         private string BitString;
         private string Taps;
         private string Repeat;
-        public List<int> key;
-        public List<int> seed;
-        
         public Cipher(string BitString, string Taps)
         {
             this.BitString = BitString;
@@ -21,18 +18,11 @@ namespace PS4.Ex
             Repeat = BitString;
             
         }
-        public string EnDecrypt()
+        public string Encrypt()
         {
             string temp = Repeat.ToString();
             LFSR LFSR = new(temp, Taps);
-            //string temp = LFSR.GenerateWordLength(BitString.Length);
-            //wywołanie generowania klucza
-            key = LFSR.Generate();
-            seed = LFSR.GetRandoms();
-
-            //int[] lfsrInts = LFSR.ToArray(key);
-            //int[] lfsrInts = LFSR.ToArray(temp);
-            //stworzenie tabeli z kluczem
+            List<int> key = LFSR.Generate();
             int[] bitStringsInts = LFSR.ToArray(BitString);
             int[] resultInts = new int[BitString.Length];
 

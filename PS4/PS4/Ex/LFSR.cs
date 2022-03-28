@@ -26,15 +26,12 @@ namespace PS4.Ex
             return -1;
         }
     }
-
     class LFSR
     {
-        private int Repeat;
-        private string Taps;
-		List<int> LFSR_Result; //Wynikowa lista LFSR!!!
-		List<int> Randoms = new List<int>();
+        private int Repeat; //Counter
+        private string Taps; //Key
 
-		public LFSR(string Repeat, string Taps)
+        public LFSR(string Repeat, string Taps)
         {
             this.Repeat = int.Parse(Repeat);
             this.Taps = Taps;
@@ -44,16 +41,14 @@ namespace PS4.Ex
             int[] ints = s.ToCharArray().Where(x => int.TryParse(x.ToString(), out int myInt)).Select(selector: x => int.Parse(x.ToString())).ToArray();
             return ints;
         }
-
-		public List<int> Generate()
+        public List<int> Generate()
         {
 			//DANE TWORZONE PRZEZ PROGRAM
-			LFSR_Result = new List<int>(); //Wynikowa lista LFSR!!!
 			var rand = new Random(); //Losowanie liczb startowych
 			int numcol = -1; //ilosc kolumn, tworzone odczytując M
 			List<int> Order = new List<int>(); //tablica inicjatyw, , tworzone odczytując M
 			LFSR_Line NewLineObject = new LFSR_Line(); //Obiekt pojedynczej linii
-			
+			List<int> LFSR_Result = new List<int>(); //Wynikowa lista LFSR!!!
 
 			//ODCZYTYWANIE KLUCZA
 			//Console.WriteLine("Ordering...");
@@ -76,11 +71,7 @@ namespace PS4.Ex
 			//WYGENEROWANIE PIERWSZEJ LINII
 			//Console.WriteLine("Preparing...");
 			for (int i = 0; i < numcol; i++)
-			{
-				int r = rand.Next(2);
-				NewLineObject.Line.Add(r);
-				Randoms.Add(r);
-			}
+			{NewLineObject.Line.Add(rand.Next(2));}
 
 			//Główna Pętla
 			//Console.WriteLine("LOOPing...");
@@ -105,13 +96,6 @@ namespace PS4.Ex
 
 			return LFSR_Result;
         }
-
-		public List<int> GetRandoms()
-        {
-			return Randoms;
-		}
-
-
-	}
+    }
     
 }
