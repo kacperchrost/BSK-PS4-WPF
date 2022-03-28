@@ -18,17 +18,11 @@ namespace PS4.Ex
             Repeat = BitString;
             
         }
-        public string EnDecrypt()
+        public string Encrypt()
         {
             string temp = Repeat.ToString();
             LFSR LFSR = new(temp, Taps);
-            //string temp = LFSR.GenerateWordLength(BitString.Length);
-            //wywołanie generowania klucza
             List<int> key = LFSR.Generate();
-
-            //int[] lfsrInts = LFSR.ToArray(key);
-            //int[] lfsrInts = LFSR.ToArray(temp);
-            //stworzenie tabeli z kluczem
             int[] bitStringsInts = LFSR.ToArray(BitString);
             int[] resultInts = new int[BitString.Length];
 

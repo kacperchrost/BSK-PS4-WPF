@@ -40,13 +40,13 @@ namespace PS4
         private void Encrypt_Click(object sender, RoutedEventArgs e)
         {
             Cipher cipher = new(bitString.Text, streamTaps.Text);
-            cipherResult.Text = cipher.EnDecrypt();
+            cipherResult.Text = cipher.Encrypt();
         }
 
         private void Decrypt_Click(object sender, RoutedEventArgs e)
         {
             Cipher cipher = new(bitString.Text, streamTaps.Text);
-            cipherResult.Text = cipher.EnDecrypt();
+            cipherResult.Text = cipher.Encrypt();
         }
     }
 }

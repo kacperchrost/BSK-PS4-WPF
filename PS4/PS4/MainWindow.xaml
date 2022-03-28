@@ -45,7 +45,7 @@
                 </DockPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="Zakoduj" HorizontalAlignment="Right" Padding="5" Margin="5" Name="encrypt" Click="Encrypt_Click"/>
-                    <Button Content="Dekoduj" HorizontalAlignment="Right" Padding="5" Margin="5" Name="decrypt" Click="Decrypt_Click"/>
+                    
                 </StackPanel>
                 <DockPanel LastChildFill="True">
                     <Label Content="Szyfr strumieniowy" Margin="5" Padding="5"/>
